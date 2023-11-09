@@ -1,0 +1,10 @@
+SELECT COUNT(*) FROM actor WHERE last_name = 'Wahlberg';
+SELECT COUNT(*) FROM payment WHERE amount BETWEEN 3.99 AND 5.99;
+SELECT film_id, COUNT(*) as inventory_count FROM inventory GROUP BY film_id ORDER BY inventory_count DESC LIMIT 1;
+SELECT COUNT(*) FROM customer WHERE last_name = 'William';
+SELECT staff_id, COUNT(*) AS rental_count FROM rental GROUP BY staff_id ORDER BY rental_count DESC LIMIT 1;
+SELECT COUNT(*) FROM district DISTINCT;
+SELECT film_id, COUNT(*) AS actor_count FROM film_actor GROUP BY film_id ORDER BY actor_count DESC LIMIT 1;
+SELECT COUNT(*) FROM customer WHERE store_id = 1 AND last_name LIKE '%es';
+SELECT amount, COUNT(*) AS rental_count FROM rental JOIN payment ON rental.payment_id = payment.payment_id WHERE customer_id BETWEEN 380 AND 430 GROUP BY amount HAVING COUNT(*) > 250;
+SELECT COUNT(DISTINCT rating) AS rating_count,  rating FROM film GROUP BY rating ORDER BY COUNT(*) DESC LIMIT 1;
